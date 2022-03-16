@@ -13,20 +13,6 @@ else{
 	echo "kesalahan dari no_surat";
 }
 // batas
-if (isset($_POST['nik'])) {
-	$nik = $_POST['nik'];
-}
-else{
-	echo "kesalahan dari nik";
-}
-// batas
-if (isset($_POST['nik2'])) {
-	$nik2 = $_POST['nik2'];
-}
-else{
-	echo "kesalahan dari nik2";
-}
-// batas
 if (isset($_POST['nama'])) {
 	$nama = $_POST['nama'];
 }
@@ -139,29 +125,36 @@ else{
 	echo "kesalahan dari nm_tertera2";
 }
 // batas
-if (isset($_POST['no_kk'])) {
-	$no_kk = $_POST['no_kk'];
+if (isset($_POST['parameter'])) {
+	$parameter = $_POST['parameter'];
 }
 else{
-	echo "kesalahan dari no_kk";
+	echo "kesalahan dari parameter";
 }
 // batas
-if (isset($_POST['no_kk2'])) {
-	$no_kk2 = $_POST['no_kk2'];
+if (isset($_POST['parameter2'])) {
+	$parameter2 = $_POST['parameter2'];
 }
 else{
-	echo "kesalahan dari no_kk2";
+	echo "kesalahan dari parameter2";
 }
 // batas
-if (isset($_POST['no_sj'])) {
-	$no_sj = $_POST['no_sj'];
+if (isset($_POST['no_parameter'])) {
+	$no_parameter = $_POST['no_parameter'];
 }
 else{
-	echo "kesalahan dari no_sj";
+	echo "kesalahan dari no_parameter";
+}
+// batas
+if (isset($_POST['no_parameter2'])) {
+	$no_parameter2 = $_POST['no_parameter2'];
+}
+else{
+	echo "kesalahan dari no_parameter2";
 }
 // batas
 if (isset($_POST['diubah'])) {
-	$diubah = $_POST['diubah'];
+	$diubah = ucwords($_POST['diubah']);
 }
 else{
 	echo "kesalahan dari diubah";
@@ -278,76 +271,76 @@ $pdf->Cell(0,6,'Menerangkan bahwa : ');
 
 $pdf->Ln(7);
 $pdf->Cell(8,7,'1.',0,0,'L');
-$pdf->Cell(50,7,'N a m a',0,0,'L');
+$pdf->Cell(55,7,'N a m a',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->SetFont('Times','B',12);
 $pdf->Cell(0,7,$nama_up,0,1,'L');
 
 $pdf->Cell(8);
 $pdf->SetFont('Times','',12);
-$pdf->Cell(50,7,'Jenis Kelamin',0,0,'L');
+$pdf->Cell(55,7,'Jenis Kelamin',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->Cell(0,7,$jk,0,1,'L');
 
 $pdf->Cell(8);
-$pdf->Cell(50,7,'Tempat, tgl.Lahir',0,0,'L');
+$pdf->Cell(55,7,'Tempat, tgl.Lahir',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->Cell(0,7,"$tmpt_lahir, $ttl_new",0,1,'L');
 
 $pdf->Cell(8);
 $pdf->SetFont('Times','',12);
-$pdf->Cell(50,7,'Alamat',0,0,'L');
+$pdf->Cell(55,7,'Alamat',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->MultiCell(0,7,"Kampung $dusun RT-$rt / RW-$rw Desa Bantal, Kecamatan Asembagus,  Kode  Pos  68373, Kabupaten Situbondo, Jawa Timur.",0,'J');
 
 $pdf->Cell(8);
-$pdf->Cell(50,7,'Nama tersebut tertera pada',0,0,'L');
+$pdf->Cell(55,7,"$diubah tersebut tertera pada",0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->SetFont('Times','',12);
 $pdf->MultiCell(0,7,"$nm_tertera",0,'L');	
 
 $pdf->Cell(8);
-$pdf->Cell(50,7,'NIK & No KK',0,0,'L');
+$pdf->Cell(55,7,ucwords($parameter),0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->SetFont('Times','',12);
-$pdf->Cell(0,7,"$nik & $no_kk",0,1,'L');
+$pdf->Cell(0,7,$no_parameter,0,1,'L');
 
 // data baru
 $pdf->Ln(3);
 $pdf->Cell(8,7,'2.',0,0,'L');
-$pdf->Cell(50,7,'N a m a',0,0,'L');
+$pdf->Cell(55,7,'N a m a',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->SetFont('Times','B',12);
 $pdf->Cell(0,7,$nama_up2,0,1,'L');
 
 $pdf->Cell(8);
 $pdf->SetFont('Times','',12);
-$pdf->Cell(50,7,'Jenis Kelamin',0,0,'L');
+$pdf->Cell(55,7,'Jenis Kelamin',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->Cell(0,7,$jk2,0,1,'L');
 
 $pdf->Cell(8);
-$pdf->Cell(50,7,'Tempat, tgl.Lahir',0,0,'L');
+$pdf->Cell(55,7,'Tempat, tgl.Lahir',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->Cell(0,7,"$tmpt_lahir2, $ttl_new2",0,1,'L');
 
 $pdf->Cell(8);
 $pdf->SetFont('Times','',12);
-$pdf->Cell(50,7,'Alamat',0,0,'L');
+$pdf->Cell(55,7,'Alamat',0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->MultiCell(0,7,"Kampung $dusun2 RT-$rt2 / RW-$rw2 Desa Bantal, Kecamatan Asembagus, Kode Pos 68373, Kabupaten Situbondo, Jawa Timur.",0,'J');
 
 $pdf->Cell(8);
-$pdf->Cell(50,7,'Nama tersebut tertera pada',0,0,'L');
+$pdf->Cell(55,7,"$diubah tersebut tertera pada",0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->SetFont('Times','',12);
 $pdf->MultiCell(0,7,ucwords($nm_tertera2),0,'L');	
 
 $pdf->Cell(8);
-$pdf->Cell(50,7,'No.',0,0,'L');
+$pdf->Cell(55,7,ucwords($parameter2),0,0,'L');
 $pdf->Cell(5,7,':',0,0,'L');
 $pdf->SetFont('Times','',12);
-$pdf->Cell(0,7,"$no_sj",0,1,'L');
+$pdf->Cell(0,7,$no_parameter2,0,1,'L');
 
 $pdf->Ln(3);
 $pdf->WriteTag(0,7,"<p>Dua $diubah berbeda tersebut diatas adalah <b>benar-benar satu orang</b> dan terdaftar sebagai warga Desa Bantal, Kecamatan Asembagus Kabupaten Situbondo.</p>",0,'J');

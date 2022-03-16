@@ -131,6 +131,13 @@ else{
 
 					<div class="wrap shadow-sm p-3 mt-3">
 						<form action="cetak/cetak-beda-nama.php" method="POST">
+
+							<span style="font-size: 12px; color: green;" class="ms-3">*bantuan data</span>
+							<div class="form-group mb-1 ms-3 d-flex align-items-center">
+								<p><?php echo "NIK : $result_nik";?></p>
+								<p style="margin-left: 60px;"><?php echo "No KK : $no_kk";?></p>
+							</div>
+
 							<div class="row ps-3">
 								<!-- kiri -->
 								<div class="col-5 me-5">
@@ -140,13 +147,8 @@ else{
 										<input name="no_surat" id="no_surat"  class="form-control bg-light" type="text" value="<?php echo $no_surat_cek?>" required>
 									</div>
 
+
 									<h4 class="mt-3 mb-2">Data Lama</h4>
-
-									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="nik" class="mb-2 col-3 me-2 pt-2 pb-2">NIK</label>
-
-										<input name="nik" id="nik"  class="form-control bg-light" type="text" value="<?php echo $result_nik?>" required>
-									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="nama" class="mb-2 col-3 me-2 pt-2 pb-2">Nama</label>
@@ -214,18 +216,6 @@ else{
 									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="nm_tertera" class="mb-2 col-3 me-2 pt-2 pb-2 ">Nama Tertera Pada</label>
-										
-										<textarea name="nm_tertera" id="nm_tertera" class="form-control bg-light" required>Kartu Tanda Penduduk & Kartu Keluarga</textarea>
-									</div>
-
-									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="no_kk" class="mb-2 col-3 me-2 pt-2 pb-2">Nomor KK</label>
-
-										<input name="no_kk" id="no_kk"  class="form-control bg-light" type="text" value="<?php echo $no_kk?>" required>
-									</div>
-
-									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="tmpt_lahir" class="mb-2 col-3 me-2 pt-2 pb-2">Tempat Lahir</label>
 
 										<input name="tmpt_lahir" id="tmpt_lahir"  class="form-control bg-light" type="text" value="<?php echo $tmpt_lahir3?>" required>
@@ -236,19 +226,9 @@ else{
 
 										<input name="tgl_lahir" id="tgl_lahir"  class="form-control bg-light" type="date" value="<?php echo $tgl_lahir?>" required>
 									</div>
+									
 
-								</div>
-
-								<!-- kanan -->
-								<div class="col-6">
-
-									<h4 class="mb-2">Data Baru</h4>
-
-									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="nik2" class="mb-2 col-3 me-2 pt-2 pb-2">NIK</label>
-
-										<input name="nik2" id="nik2"  class="form-control bg-light" type="text" required>
-									</div>
+									<h4 class="mb-2 mt-4">Data Baru</h4>
 
 									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="nama2" class="mb-2 col-3 me-2 pt-2 pb-2">Nama</label>
@@ -260,23 +240,22 @@ else{
 										<label for="dusun2" class="mb-2 col-3 pt-2 pb-2 me-2">Dusun</label>
 
 										<select id="dusun2" class="form-control bg-light" name="dusun2" required>
-											<option value="">- Pilih Dusun</option>
-											<option value="Utara">UTARA</option>
-											<option value="Tenggara">TENGGARA</option>
-											<option value="Selatan">SELATAN</option>
+											<option value="Utara" <?php echo $utara?> >UTARA</option>
+											<option value="Tenggara" <?php echo $tenggara?> >TENGGARA</option>
+											<option value="Selatan" <?php echo $selatan?> >SELATAN</option>
 										</select>
 									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="rt2" class="mb-2 col-3 me-2 pt-2 pb-2">RT</label>
 
-										<input name="rt2" id="rt2"  class="form-control bg-light" type="text" required>
+										<input name="rt2" id="rt2" class="form-control bg-light" type="text" value="<?php echo $rt?>" required>
 									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="rw2" class="mb-2 col-3 me-2 pt-2 pb-2">RW</label>
 
-										<input name="rw2" id="rw2"  class="form-control bg-light" type="text" required>
+										<input name="rw2" id="rw2" class="form-control bg-light" type="text" value="<?php echo $rw?>" required>
 									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
@@ -292,24 +271,6 @@ else{
 									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="nm_tertera2" class="mb-2 col-3 me-2 pt-2 pb-2 ">Nama Tertera Pada</label>
-										
-										<textarea name="nm_tertera2" id="nm_tertera2" class="form-control bg-light" required></textarea>
-									</div>
-
-									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="no_sj" class="mb-2 col-3 me-2 pt-2 pb-2">Nomor</label>
-
-										<input name="no_sj" id="no_sj"  class="form-control bg-light" type="text" required>
-									</div>
-
-									<div class="form-group mb-1 d-flex align-items-center">
-										<label for="no_kk2" class="mb-2 col-3 me-2 pt-2 pb-2">Nomor KK</label>
-
-										<input name="no_kk2" id="no_kk2"  class="form-control bg-light" type="text" required>
-									</div>
-
-									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="tmpt_lahir2" class="mb-2 col-3 me-2 pt-2 pb-2">Tempat Lahir</label>
 
 										<input name="tmpt_lahir2" id="tmpt_lahir2"  class="form-control bg-light" type="text" required>
@@ -320,13 +281,58 @@ else{
 
 										<input name="tgl_lahir2" id="tgl_lahir2"  class="form-control bg-light" type="date" required>
 									</div>
+									
+
+								</div>
+
+								<!-- kanan -->
+								<div class="col-6" style="margin-top: 102.5px;">
+
+									<!-- data lama -->
+
+									<div class="form-group mb-1 d-flex align-items-center">
+										<label for="nm_tertera" class="mb-2 col-3 me-2 pt-2 pb-2 ">Tertera Pada</label>
+										
+										<textarea name="nm_tertera" id="nm_tertera" class="form-control bg-light" placeholder="KTP atau KK atau Akta dll" required></textarea>
+									</div>
+
+									<div class="form-group mb-1 d-flex align-items-center">
+										<label for="parameter" class="mb-2 col-3 me-2 pt-2 pb-2">Parameter</label>
+
+										<input name="parameter" id="parameter"  class="form-control bg-light" type="text" placeholder="Sesuai Dengan Data Tertera" required>
+									</div>
+
+									<div class="form-group mb-1 d-flex align-items-center">
+										<label for="no_parameter" class="mb-2 col-3 me-2 pt-2 pb-2">Nomor Parameter</label>
+
+										<input name="no_parameter" id="no_parameter"  class="form-control bg-light" type="text" required>
+									</div>
+
+									<!-- data baru -->
+
+									<div class="form-group mb-1 d-flex align-items-center" style="margin-top: 225px;">
+										<label for="nm_tertera2" class="mb-2 col-3 me-2 pt-2 pb-2 ">Tertera Pada</label>
+										
+										<textarea name="nm_tertera2" id="nm_tertera2" class="form-control bg-light" placeholder="KTP atau KK atau Akta dll" required></textarea>
+									</div>
+
+									<div class="form-group mb-1 d-flex align-items-center">
+										<label for="parameter2" class="mb-2 col-3 me-2 pt-2 pb-2">Parameter</label>
+
+										<input name="parameter2" id="parameter2"  class="form-control bg-light" type="text" placeholder="Sesuai Dengan Data Tertera" required>
+									</div>
+
+									<div class="form-group mb-1 d-flex align-items-center">
+										<label for="no_parameter2" class="mb-2 col-3 me-2 pt-2 pb-2">Nomor Parameter</label>
+
+										<input name="no_parameter2" id="no_parameter2"  class="form-control bg-light" type="text" required>
+									</div>
 
 									<div class="form-group mb-1 d-flex align-items-center">
 										<label for="diubah" class="mb-2 col-3 me-2 pt-2 pb-2">Yang Diubah</label>
 
 										<input name="diubah" id="diubah"  class="form-control bg-light" type="text" placeholder="Nama atau Tanggal Lahir atau nik" required>
 									</div>
-
 								</div>
 							</div>
 

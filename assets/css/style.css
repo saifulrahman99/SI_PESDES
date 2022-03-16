@@ -125,3 +125,7 @@ table{
 .box-dashboard{
 	border-left: 4px solid #0CD11C;
 }
+
+.disclaimer{
+	display: none !important;
+}

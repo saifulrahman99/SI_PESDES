@@ -1,0 +1,127 @@
+body{
+	font-family: "Tahoma";
+	color: #3E3E3E !important;
+	background-color: #FBFBFB;
+}
+/*atur font size*/
+form, input, option,select, textarea, #registrasi .opsi-login a, #login .opsi-login a{
+	font-size: 14px !important;
+}
+#registrasi .opsi-login p, #login .opsi-login p{
+	font-size: 10px;
+}
+
+.container{
+	max-width: 1100px;
+}
+
+#sidebar{
+	background-color: #FFF;
+	font-size: 14px;
+	width: 280px;
+	height: 100%;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	display: block;
+	overflow: auto;
+	transition: 0.5s;
+}
+#konten{
+	width: 100%;
+	min-width: 800px;
+	margin-left: 280px;
+	overflow-x: auto;
+	transition: 0.5s;
+}
+#header{
+	position: sticky;
+	top: 0;
+	margin-left: 280px;
+	height: 55px;
+	background-color: #0AC719;
+	color: white;
+	z-index: auto;
+	transition: 0.5s;
+}
+/*logo*/
+#sidebar .head-sidebar .logo img{
+	max-width: 40px;
+}
+
+#header .profile img{
+	width: 30px;
+	border-radius: 50%;
+}
+#header .profile a{
+	font-size: 14px;
+}
+#header .profile a:hover{
+	color: #3D3C3C !important;
+}
+
+/*bagian menu sidebar*/
+.head-sidebar{
+	border-bottom: 1px solid #E5E4E4;
+}
+
+.nama-aplikasi h1{
+	font-size: 18px;
+}
+.menu-sidebar li a{
+	color: #3E3E3E;
+}
+.menu-sidebar li a:focus{
+	color: #3E3E3E;
+}
+.menu-sidebar li a:hover, .menu-sidebar .navlink{
+	color: #3E3E3E;
+	background-image: linear-gradient(to right, white , #0AC719);
+}
+.menu-sidebar li ul li{
+	list-style: none;
+}
+.menu-sidebar .nav-item{
+	padding-left: 10px;
+}
+.menu-sidebar .submenu{
+	padding-left: 15px;
+}
+
+/*end sidebar*/
+
+/*bagian konten*/
+#header .kanan{
+	float: right;
+	margin-right: 20px;
+}
+.isi-konten .wrap{
+	background-color: white;
+	margin-bottom: 40px;
+}
+
+/*table*/
+table{
+	font-size: 12px;
+}
+
+/*form registrasi*/
+#registrasi, #login{
+	height: 600px;
+}
+#registrasi img, #login img{
+	max-width: 60px;
+}
+
+.footer{
+	position: fixed;
+	bottom: 0;
+	padding: 10px;
+	font-size: 11px;
+	background-color: #E9E9E9;
+	width: 100%;
+}
+
+.box-dashboard{
+	border-left: 4px solid #0CD11C;
+}

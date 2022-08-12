@@ -32,7 +32,11 @@ if ($sessionStatus==false) {
 			<!-- isi konten -->
 			<div class="isi-konten m-3">
 				<div class="container">
+					
 					<h4 class="fw-bolder">Tambah Data Penduduk</h4>
+					
+					<!-- <a href="impor-data.php" class="btn btn-success mt-3 text-white px-4 py-1">Impor Dari Excel</a> -->
+
 					<div class="wrap shadow-sm p-3 mt-3">
 						<form action="action/action-penduduk.php?opsi=input" method="POST">
 							<div class="row ps-3">
@@ -188,7 +192,7 @@ if ($sessionStatus==false) {
 							</div>
 
 							<input type="submit" name="submit" value="Simpan" class="btn btn-info text-white col-2 ms-3 mt-3">
-							<a href="data-penduduk.php" class="btn btn-info ms-3 mt-3 text-white px-4 py-1">Data Penduduk</a>
+							
 						</form>
 					</div>
 				</div>

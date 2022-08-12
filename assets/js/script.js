@@ -1,13 +1,11 @@
-function openNav() {
-  document.getElementById("konten").style.marginLeft = "280px";
-  document.getElementById("header").style.marginLeft = "280px";
-  document.getElementById("sidebar").style.marginLeft = "0";
-}
-
-function closeNav() {
-  document.getElementById("konten").style.marginLeft = "0";
-  document.getElementById("header").style.marginLeft = "0";
-  document.getElementById("sidebar").style.marginLeft = "-280px";
+function myFunction() {
+   var element = document.getElementById("konten");
+   var element2 = document.getElementById("header");
+   var element3 = document.getElementById("sidebar");
+  
+   element.classList.toggle("toggleNav");
+   element2.classList.toggle("toggleNav");
+   element3.classList.toggle("toggleNav2");
 }
 
 // sidebar menu collapse

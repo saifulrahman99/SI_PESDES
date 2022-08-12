@@ -1,7 +1,7 @@
 body{
 	font-family: "Tahoma";
 	color: #3E3E3E !important;
-	background-color: #FBFBFB;
+	background-color: #F6F6F6;/*#FBFBFB*/
 }
 /*atur font size*/
 form, input, option,select, textarea, #registrasi .opsi-login a, #login .opsi-login a{
@@ -44,6 +44,13 @@ form, input, option,select, textarea, #registrasi .opsi-login a, #login .opsi-lo
 	z-index: auto;
 	transition: 0.5s;
 }
+#header .bars.btn{
+	margin-left: -11px !important;
+	margin-top: -10px !important;
+}
+#header .bars.btn:focus{
+	box-shadow: none !important;
+}
 /*logo*/
 #sidebar .head-sidebar .logo img{
 	max-width: 40px;
@@ -55,9 +62,13 @@ form, input, option,select, textarea, #registrasi .opsi-login a, #login .opsi-lo
 }
 #header .profile a{
 	font-size: 14px;
+	transition: 0.5s;
 }
 #header .profile a:hover{
-	color: #3D3C3C !important;
+	background-color: red;
+	padding: 5px;
+	border-radius: 10px;
+	transition: 0.5s;
 }
 
 /*bagian menu sidebar*/
@@ -77,11 +88,18 @@ form, input, option,select, textarea, #registrasi .opsi-login a, #login .opsi-lo
 .menu-sidebar li a:hover, .menu-sidebar .navlink{
 	color: #3E3E3E;
 	background-image: linear-gradient(to right, white , #0AC719);
+	transform: translate3d(10px, 0px, 0px);
+	transition: 0.5s;
+	width: 260px;
+}
+.menu-sidebar .submenu li a:hover{
+	width: 228px;
 }
 .menu-sidebar li ul li{
 	list-style: none;
 }
 .menu-sidebar .nav-item{
+	margin-bottom: 3px;
 	padding-left: 10px;
 }
 .menu-sidebar .submenu{
@@ -128,4 +146,18 @@ table{
 
 .disclaimer{
 	display: none !important;
+}
+
+/*animasi toggle*/
+.toggleNav{
+	margin-left: 0 !important;
+}
+.toggleNav2{
+	margin-left: -280px !important;
+
+}
+
+/*bagian index bentuk cursor*/
+.box-dashboard p{
+	cursor: default;
 }

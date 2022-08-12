@@ -148,8 +148,8 @@ $namaKepdes = strtoupper($kepdes['nama']);
 
 
 // include master file
-// define('FPDF_FONTPATH','C:\xampp\htdocs\SI_PESDES\library\fpdf\font');
-define('FPDF_FONTPATH','/storage/ssd1/301/18576301/public_html/library/fpdf/font');
+define('FPDF_FONTPATH','C:\xampp\htdocs\SI_PESDES\library\fpdf\font');
+// define('FPDF_FONTPATH','/storage/ssd1/301/18576301/public_html/library/fpdf/font');
 require_once('../library/fpdf/fpdf.php');
 
 // penerapan objek

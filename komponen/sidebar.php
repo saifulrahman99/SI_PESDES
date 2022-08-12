@@ -1,6 +1,6 @@
 <div id="sidebar" class="fixed-top pb-5">
 	<!-- head sidebar -->
-	<div class="head-sidebar text-center d-flex ps-4">
+	<div class="head-sidebar text-center d-flex ps-4 sticky-top bg-white">
 		<div class="logo my-2">
 			<img src="assets/img/logo/logo.png" alt="logo">
 		</div>
@@ -36,7 +36,6 @@
 				<a class="nav-link" href="#"><i class="fa fa-fa fa-mail-bulk"></i> Pelayanan Kependudukan <i class="fas fa-caret-down"></i> </a>
 				<ul class="submenu collapse">
 					<li><a class="nav-link" href="form-permohonan-kk.php"><i class="far fa-circle"></i> Permohonan KK </a></li>
-					<!-- <li><a class="nav-link" href="pembuatan-kk.php"><i class="far fa-circle"></i> Pembuatan KK </a></li> -->
 					<li><a class="nav-link" href="form-beda-nama.php"><i class="far fa-circle"></i> Beda Nama </a></li>
 					<li><a class="nav-link" href="form-domisili.php"><i class="far fa-circle"></i> Domisili Baru </a></li>
 					<li><a class="nav-link" href="form-lahir.php"><i class="far fa-circle"></i> Ket Kenal Lahir </a></li>

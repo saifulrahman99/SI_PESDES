@@ -10,7 +10,7 @@ if ($sessionStatus==false) {
 
 // untuk paging
 $halaman = 25; //batasan halaman
-$page = isset($_GET['halaman'])? (int)$_GET["halaman"]:1;
+$page = isset($_GET['halaman']) ? (int)$_GET["halaman"] : 1;
 $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
 
 // filter get nik
@@ -64,10 +64,12 @@ else{
 
 				</div>
 				<div class="wrap col table-responsive shadow-sm rounded p-3">
+				<a href="cetak/cetak-data.php" class="btn btn-success mb-2" style="font-size:14px;">Cetak Data (Excel)</a>
 
 					<table class="table table-striped table-bordered responsive-utilities text-center">
 						<thead>
 							<tr>
+								<th scope="col">No</th>
 								<th scope="col" style="min-width:80px;">Aksi</th>
 								<th scope="col">NIK</th>
 								<th scope="col" style="min-width:200px;">Nama</th>
@@ -92,11 +94,12 @@ else{
 
 							$query= "SELECT * FROM tb_penduduk $cari";
 							$result=mysqli_query($db, $query);
-								// foreach
+							// foreach
 							$i=1;
 							foreach ($result as $penduduk) {
 								?>
 								<tr>
+									<td><?php echo $i++?></td>
 									<td>
 										<a class="card-text text-decoration-none text-info fs-6" href="edit-penduduk.php?id=<?php echo $penduduk['id']?>"><i class="fas fa-edit"></i>
 										</a>&nbsp | &nbsp
@@ -138,72 +141,48 @@ else{
 				$pages = ceil($total/$halaman);
 
 				// batas page tampil
-				$limitpageshow = $page+3;
+				$limitpageshow = 1;
 
 				// kondisi disable tombol sebelumnya
-				if ($page == 1) {
-					$hilangP = 'disabled';
-				}else{
-					$hilangP = '';
-				}
+				$hilangP = ($page == 1) ? 'disabled' : ' ';
 
 				// kondisi disable tombol selanjutnya
-				if ($page == $pages-3) {
-					$hilangN = 'disabled';
-					$limitpageshow = $page+3;
-				}elseif ($page == $pages-2) {
-					$hilangN = 'disabled';
-					$limitpageshow = $page+2;
-				}elseif ($page == $pages-1) {
-					$hilangN = 'disabled';
-					$limitpageshow = $page+1;
-				}elseif($page == $pages){
-					$hilangN = 'disabled';
-					$limitpageshow = $page;
-				}
-				else{
-					$hilangN = '';
-				}
+				$hilangN = ($page == $pages) ? 'disabled' : ' ';
+				
 
 				if ($navPage == "ada") {
 
-				?>
-				<nav aria-label="pagging">
-					<ul class="pagination">
-						<?php if ($page > 1) {?>
-							<li class="page-item">
-								<a class="page-link" href="?halaman=1"><i class="fa fa-angle-double-left"></i></a>
+					?>
+					<nav aria-label="pagging">
+						<ul class="pagination">
+							<?php if ($page > 1) {?>
+								<li class="page-item">
+									<a class="page-link" href="?halaman=1"><i class="fa fa-angle-double-left"></i></a>
+								</li>
+							<?php } ?>
+
+							<li class="page-item <?php echo $hilangP?>">
+								<?php $previouspage = $page-1; ?>
+								<a class="page-link" href="?halaman=<?php echo $previouspage; ?>" aria-disabled="true"><i class="fa fa-angle-left"></i></a>
 							</li>
-						<?php } ?>
 
-						<li class="page-item <?php echo $hilangP?>">
-							<?php $previouspage = $page-1; ?>
-							<a class="page-link" href="?halaman=<?php echo $previouspage; ?>" aria-disabled="true"><i class="fa fa-angle-left"></i></a>
-						</li>
+							<!-- menampilkan pages -->
+							<li class="page-item"><a class="page-link" href="?halaman=<?php echo $page; ?>"><?php echo $page; ?></a></li>
 
-						<?php
-						if ($page == $pages) {
-							$limitpageshow = $page;
-						}
-						// menampilkan pages
-						for ($i=$page; $i<=$limitpageshow; $i++){ ?>
-							<li class="page-item"><a class="page-link" href="?halaman=<?php echo $i; ?>"><?php echo $i; ?></a></li>
-						<?php } ?>
-
-						<li class="page-item <?php echo $hilangN?>">
-							<?php $nextpage = $page+1; ?>
-							<a class="page-link" href="?halaman=<?php echo $nextpage; ?>"><i class="fa fa-angle-right"></i></a>
-						</li>
-
-						<?php if ($page < $pages) { ?>
-							<li class="page-item">
-								<a class="page-link" href="?halaman=<?php echo $pages?>"><i class="fa fa-angle-double-right"></i></a>
+							<li class="page-item <?php echo $hilangN?>">
+								<?php $nextpage = $page+1; ?>
+								<a class="page-link" href="?halaman=<?php echo $nextpage; ?>"><i class="fa fa-angle-right"></i></a>
 							</li>
-						<?php } ?>
 
-					</ul>
-					<p>Page: <?php echo $page?> of <?php echo $pages?></p>
-				</nav>
+							<?php if ($page < $pages) { ?>
+								<li class="page-item">
+									<a class="page-link" href="?halaman=<?php echo $pages?>"><i class="fa fa-angle-double-right"></i></a>
+								</li>
+							<?php } ?>
+
+						</ul>
+						<p>Page: <?php echo $page?> of <?php echo $pages?></p>
+					</nav>
 				<?php } ?>
 
 			</div>

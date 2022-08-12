@@ -18,7 +18,7 @@ if ($sessionStatus==false) {
 	<title>Halaman Utama</title>
 	<?php 
 
-	require('config/script.php'); 
+	require('config/script.php');
 	require('config/style.php'); 
 	
 	?>
@@ -37,7 +37,7 @@ if ($sessionStatus==false) {
 			
 			<!-- isi konten -->
 			<div class="isi-konten m-3">
-				<h5 class="fw-bolder text-center mb-4">Sistem Informasi Pelayanan Surat Desa Bantal</h5>
+				<h5 class="fw-bolder text-center mt-4 mb-4">Sistem Informasi Pelayanan Surat Desa Bantal</h5>
 
 				<div class="row justify-content-center">
 
@@ -48,7 +48,11 @@ if ($sessionStatus==false) {
 						$query = "SELECT no_surat FROM tb_surat ORDER BY id DESC";
 						$result = mysqli_query($db, $query);
 						$no_surat = mysqli_fetch_assoc($result);
-						$no_s = intval($no_surat['no_surat']);
+						if (is_null($no_surat)) {
+							$no_s = 0;
+						}else{
+							$no_s = intval($no_surat['no_surat']);
+						}
 						?>
 						<p class="m-0 fw-bolder fs-5"><?php echo $no_s?></p>
 						<p class="m-0">Surat Dibuat</p>
@@ -59,7 +63,7 @@ if ($sessionStatus==false) {
 						<?php
 						$query = "SELECT * FROM tb_penduduk";
 						$result = mysqli_query($db, $query);
-
+						
 						$jml_penduduk = mysqli_num_rows($result);
 						?>
 						<p class="m-0 fw-bolder fs-5"><?php echo $jml_penduduk;?></p>
